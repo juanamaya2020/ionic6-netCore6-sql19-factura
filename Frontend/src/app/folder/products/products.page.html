@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item></ion-item>
+    <ion-item *ngFor="let product of products">
+      <ion-label
+        >
+        <strong>Codigo:</strong> {{product.idProducto}}
+        <br />
+        <strong>Nombre:</strong> {{product.descripcion}}
+        <br />
+        <strong>Valor:</strong> ${{product.valorUnitario | number}} COP
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
+    <ion-fab-button routerLink='/product-create' routerDirection="forward">
+      <ion-icon name="add-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="getProducts()" routerDirection="forward">
+      <ion-icon name="refresh-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

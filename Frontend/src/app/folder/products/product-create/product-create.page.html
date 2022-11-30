@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Descripción:</ion-label>
+      <ion-input placeholder="Ej. Silla" [(ngModel)]="descripcion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Valor:</ion-label>
+      <ion-input placeholder="Ej. 1000" type="number" [(ngModel)]="valorUnitario"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="ion-padding">
+    <ion-button expand="block" (click)="setProduct()">Guardar</ion-button>
+  </div>
+</ion-content>

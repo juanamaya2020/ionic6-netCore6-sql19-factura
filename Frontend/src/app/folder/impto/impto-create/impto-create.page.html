@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear Impuesto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Producto:</ion-label>
+      <ion-select placeholder="Selecciona producto" [(ngModel)]="descripcion">
+        <ion-select-option
+          *ngFor="let product of products"
+          value="{{product.idProducto}}"
+          >{{product.descripcion}}</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Porcentaje:</ion-label>
+      <ion-input
+        placeholder="Ej. 1000"
+        type="number"
+        [(ngModel)]="valorUnitario"
+      ></ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="ion-padding">
+    <ion-button expand="block" (click)="setImpto()">Guardar</ion-button>
+  </div>
+</ion-content>

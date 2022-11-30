@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inpuestos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item></ion-item>
+    <ion-item *ngFor="let impto of imptos">
+      <ion-label
+        ><strong>Codigo:</strong> {{impto.idImpto}}
+        <br />
+        <strong>Porcentaje:</strong> {{impto.porcentajeImpto}}
+        <br />
+        <strong>Producto:</strong> {{impto.producto}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
+    <ion-fab-button routerLink="/impuest-create" routerDirection="forward">
+      <ion-icon name="add-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="getImptos()" routerDirection="forward">
+      <ion-icon name="refresh-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
