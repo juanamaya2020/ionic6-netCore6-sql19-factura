@@ -27,7 +27,7 @@ export class ProductsPage implements OnInit {
   getProducts() {
     this.products = [];
     this._http.get(this.url).subscribe((res: any) => {
-      res.forEach((element: any) => {
+      res.forEach((element: ProductsTypes) => {
         this.products.push({
           idProducto: element.idProducto,
           descripcion: element.descripcion,
